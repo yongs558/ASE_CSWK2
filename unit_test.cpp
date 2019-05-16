@@ -30,7 +30,7 @@ Rational division(Rational x, Rational y) {
 * Test case
 *
 */
-BOOST_AUTO_TEST_SUITE(maths_function)
+BOOST_AUTO_TEST_SUITE(check_fraction)
 
 	//check input in int addition
 	BOOST_AUTO_TEST_CASE(check_addition_int) {
@@ -116,6 +116,13 @@ BOOST_AUTO_TEST_SUITE(maths_function)
 
 		BOOST_CHECK_EQUAL(Rational(2000000, 1000000), Rational(2));
 		BOOST_CHECK_EQUAL(Rational(3,3), Rational(1));
+		BOOST_CHECK_EQUAL(Rational(900000, 900000), Rational(1));
+		BOOST_CHECK_EQUAL(Rational(300000000, 100000000), Rational(3));
+	}
+	BOOST_AUTO_TEST_CASE(lowest_terms_wrongans) {
+
+		BOOST_CHECK_EQUAL(Rational(2, 1000000), Rational(2));
+		BOOST_CHECK_EQUAL(Rational(3, 3), Rational(1));
 		BOOST_CHECK_EQUAL(Rational(900000, 900000), Rational(1));
 		BOOST_CHECK_EQUAL(Rational(300000000, 100000000), Rational(3));
 	}
